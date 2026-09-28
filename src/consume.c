@@ -2,7 +2,11 @@
 #include "proto.h"
 
 #include <grpc/grpc.h>
-#include <grpc/credentials.h>
+#if defined(__has_include)
+#  if __has_include(<grpc/credentials.h>)
+#    include <grpc/credentials.h>
+#  endif
+#endif
 #include <grpc/grpc_security.h>
 #include <grpc/slice.h>
 #include <grpc/status.h>
